@@ -18,6 +18,19 @@ namespace ULMSWinFormsApp.Forms
 
         private void btnEnroll_Click(object sender, EventArgs e)
         {
+
+            if (string.IsNullOrWhiteSpace(txtEnrollStudentId.Text) ||
+                string.IsNullOrWhiteSpace(txtEnrollStudentName.Text) ||
+                string.IsNullOrWhiteSpace(cmbCourse.Text) ||
+                string.IsNullOrWhiteSpace(cmbSemester.Text))
+
+            {
+                MessageBox.Show("Please fill in all required enrollment fields.");
+                return;
+            }
+
+          
+
             // Intentional weak business-rule validation for testing purposes
             Enrollment enrollment = new Enrollment
             {
